@@ -24,7 +24,7 @@ const TodoCard = ({ data }) => {
         <CardFooter className="flex justify-between p-1">
           <div className="flex flex-row gap-2 items-center">
             <span className="text-m text-gray-500 font-thin">{data.date}</span>{" "}
-            <p className="text-m text-gray-500 font-semibold font-thin">{data.description}</p>{" "}
+            <p className="text-m text-gray-500 font-thin">{data.description}</p>{" "}
           </div>
         </CardFooter>
       </Card>
