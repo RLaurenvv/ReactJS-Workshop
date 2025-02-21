@@ -1,0 +1,22 @@
+{
+  "todolist": [
+    {
+      "id": "1",
+      "title": "Buy groceries please",
+      "description": "Pick up vegetables, fruits, and snacks for the week.",
+      "date": "2025-02-21"
+    },
+    {
+      "id": "3",
+      "title": "Call mom",
+      "description": "Check in with mom and catch up on family news.",
+      "date": "2025-02-20"
+    },
+    {
+      "id": "4",
+      "title": "Clean the house",
+      "description": "Vacuum, mop the floors, and tidy up the living room.",
+      "date": "2025-02-23"
+    }
+  ]
+}
