@@ -74,11 +74,11 @@ const Todo = () => {
   if (!todo) return <div>Loading...</div>; // Show loading state if todo is not yet loaded
 
   return (
-    <div className="flex justify-center items-center mt-10">
-      <Card className="w-[750px] bg-white shadow-lg rounded-lg">
+    <div className="flex justify-center items-center ">
+      <Card className="w-[750px] bg-white shadow-lg rounded-lg border border-gray-200">
         <CardHeader>
-          <CardTitle className="flex justify-between">
-            <h1>{todo.title}</h1>
+          <div className="flex justify-between items-center">
+            <CardTitle className="text-3xl font-semibold text-gray-800">{todo.title}</CardTitle>
             <div className="flex gap-x-3">
               <Button
                 onClick={() => setIsEditing(!isEditing)}
@@ -95,66 +95,56 @@ const Todo = () => {
                 Delete
               </Button>
             </div>
-          </CardTitle>
-          <CardDescription>{todo.date}</CardDescription>
+          </div>
+          <CardDescription className="text-lg text-gray-500 mt-2">{todo.date}</CardDescription>
         </CardHeader>
 
-        <CardContent className="flex flex-col items-center py-10">
+        <CardContent className="space-y-6 px-8 py-5">
           {isEditing ? (
-            <form onSubmit={handleUpdate} className="w-full space-y-4">
+            <form onSubmit={handleUpdate} className="space-y-6">
               <div>
-                <label className="block text-sm">Title</label>
+                <label className="block text-sm font-medium text-gray-700">Title</label>
                 <input
                   type="text"
                   name="title"
                   value={updatedTodo.title}
                   onChange={handleChange}
-                  className="w-full mt-2 p-2 border border-gray-300 rounded-lg"
+                  className="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                   required
                 />
               </div>
               <div>
-                <label className="block text-sm">Description</label>
+                <label className="block text-sm font-medium text-gray-700">Description</label>
                 <textarea
                   name="description"
                   value={updatedTodo.description}
                   onChange={handleChange}
-                  className="w-full mt-2 p-2 border border-gray-300 rounded-lg"
+                  className="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                   required
                 />
               </div>
               <div>
-                <label className="block text-sm">Date</label>
+                <label className="block text-sm font-medium text-gray-700">Date</label>
                 <input
                   type="date"
                   name="date"
                   value={updatedTodo.date}
                   onChange={handleChange}
-                  className="w-full mt-2 p-2 border border-gray-300 rounded-lg"
+                  className="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                   required
                 />
               </div>
               <Button
                 type="submit"
-                className="bg-green-600 hover:bg-green-700 text-white w-full"
+                className="bg-green-600 hover:bg-green-700 text-white w-full py-3"
               >
                 Update Todo
               </Button>
             </form>
           ) : (
-            <p>{todo.description}</p>
+            <div className="text-lg text-gray-700">{todo.description}</div>
           )}
         </CardContent>
-
-        {/* <CardFooter className="flex justify-between bg-gray-100 p-4 rounded-b-lg">
-          <Button
-            onClick={handleDelete}
-            variant="destructive"
-            className="bg-red-500 hover:bg-red-600 text-white"
-          >
-            Delete
-          </Button>
-        </CardFooter> */}
       </Card>
     </div>
   );

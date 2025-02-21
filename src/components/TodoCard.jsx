@@ -11,15 +11,21 @@ import { Link } from "react-router-dom";
 const TodoCard = ({ data }) => {
   return (
     <div>
-      <Card className="w-[600px]">
-        <CardHeader>
-          <CardTitle>
+      <Card className="w-[700px] p-2">
+        {" "}
+        {/* Reduced padding on the entire card */}
+        <CardHeader className="p-1">
+          {" "}
+          {/* Reduced padding in CardHeader */}
+          <CardTitle className="text-xl font-semibold font-sans">
             <Link to={`todo/${data.id}`}>{data.title}</Link>
           </CardTitle>
         </CardHeader>
-        <CardContent>{data.description}</CardContent>
-        <CardFooter className="flex justify-between">
-          <h1>{data.date}</h1>
+        <CardFooter className="flex justify-between p-1">
+          <div className="flex flex-row gap-2 items-center">
+            <span className="text-m text-gray-500 font-thin">{data.date}</span>{" "}
+            <p className="text-m text-gray-500 font-semibold font-thin">{data.description}</p>{" "}
+          </div>
         </CardFooter>
       </Card>
     </div>

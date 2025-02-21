@@ -33,11 +33,11 @@ const Todos = () => {
     <div>
       <Card className="w-[750px] bg-gradient-to-r from-blue-500 to-indigo-600">
         <CardHeader>
-          <CardTitle>To do's </CardTitle>
-          <CardDescription className="text-black">Here are the of you to do's</CardDescription>
+          <CardTitle className="font-serif"> To Do's </CardTitle>
+          <CardDescription className="text-black font-mono text-lg">Here are the list of your to do's</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="flex flex-col gap-y-5 items-center">
+          <div className="flex flex-col gap-y-2 items-center">
             {data.map((todo, index) => (
               <TodoCard key={index} data={todo} />
             ))}

@@ -39,14 +39,14 @@ const AddTodo = () => {
   };
 
   return (
-    <div className="flex justify-center items-center mt-10">
+    <div className="flex justify-center items-center">
       <Card className="w-[750px] bg-white shadow-lg rounded-lg">
-        <CardHeader>
-          <CardTitle>Add To Do</CardTitle>
-          <CardDescription>Fill all fields to add a to do item</CardDescription>
+        <CardHeader className="py-2"> {/* Reduced padding above the title */} 
+          <CardTitle className="text-xl font-semibold">Add To Do</CardTitle>
+          <CardDescription className="text-sm">Fill all fields to add a to do item</CardDescription>
         </CardHeader>
 
-        <CardContent className="flex flex-col py-10 gap-y-5 w-full">
+        <CardContent className="flex flex-col py-5 gap-y-5 w-full">
           <div className="gap-y-2">
             <Label>Title</Label>
             <Input
@@ -77,7 +77,10 @@ const AddTodo = () => {
             />
           </div>
 
-          <Button onClick={handleSubmit} className="bg-green-500 hover:bg-green-600 text-white">
+          <Button
+            onClick={handleSubmit}
+            className="bg-green-500 hover:bg-green-600 text-white text-lg"
+          >
             Add To Do
           </Button>
         </CardContent>
